@@ -309,12 +309,55 @@
       .newsfeature .nfsummary{font-size:1rem;line-height:1.55;margin:12px 0}
       .frontpage{margin-top:16px}
       .hline{padding:12px 2px}
+    
+      /* Public edition */
+      body{background:#f6f8fa;color:#202936}
+      .wrap{max-width:1272px;padding-inline:clamp(16px,4vw,56px)}
+      .masthead{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px 24px;padding:16px 0;border-bottom:1px solid #cad2dc}
+      .topbar,.mainnav{padding:0;margin:0}
+      .topbar .name{font-size:1.45rem;letter-spacing:-.045em;color:#182536}
+      .topbar .name span{color:#116454}
+      .topbar svg{background:#142c34;border-radius:12px;padding:5px;width:36px;height:36px}
+      .mainnav{border:0;background:transparent;gap:4px}
+      .mainnav a,.nlinks a{font:600 .9rem/1.3 Inter,sans-serif;text-transform:none;letter-spacing:0;border-radius:20px;min-height:40px;padding:8px 15px}
+      .mainnav a{color:#334558}
+      .mainnav a:hover,.mainnav a:focus-visible{background:#deebe8;color:#145747}
+      .frontpage{margin-block:clamp(20px,3vw,42px);gap:clamp(20px,3vw,42px);grid-template-columns:minmax(0,1.45fr) minmax(0,1fr)}
+      .newsfeature{background:#e3f0eb;border:0;border-radius:20px;margin:0;padding:clamp(22px,3vw,42px)}
+      .newsfeature h1{margin:16px 0;max-width:18em;font-size:clamp(2rem,3.7vw,3.6rem);font-weight:600}
+      .newsfeature h1 a,.hline,.headlines h2,.sec-head h2{color:#172636}
+      .newsfeature .nfsummary,.hline .hp{color:#415364}
+      .newsfeature .nfmeta,.hline .hm{font:500 .82rem/1.5 Inter,sans-serif;text-transform:none;letter-spacing:0}
+      .newsfeature .nfmeta .nd,.newsfeature .nfmeta .ns,.hline .hd,.hline .hs{color:#405c58}
+      .nlinks{margin-top:20px}
+      .nlinks a.primary{background:#175d50;color:white}
+      .nlinks a.secondary{color:#175d50;border-color:#9cbab1}
+      .headlines{margin-top:32px}
+      .headlines h2,.sec-head h2{font:600 1.35rem/1.25 Inter,sans-serif;text-transform:none;letter-spacing:-.03em}
+      .hline{padding:18px 0;border-color:#cfd8dd}
+      .hline .ht{font:600 1.18rem/1.3 Inter,sans-serif;margin:5px 0;letter-spacing:-.02em}
+      .hline .hc{display:none}
+      .rail{gap:25px}
+      .sec-head{border-bottom:1px solid #c8d2da;padding-bottom:8px}
+      .sec-head .tag,.atlasnote,.shortline,.learn-divider,.learn-divider p,footer,footer a{color:#4b6070}
+      .sec-head .livedot{display:none}
+      .atlas{border-radius:14px;overflow:hidden}
+      .atlasnote{margin-top:8px;font:400 .8rem/1.45 Inter,sans-serif}
+      .atlas:not(.expanded) svg.atlasmap{height:auto}
+      #tracker,.wrap>section,.learn-divider{--bg:#fff;--surface:#fff;--surface2:#edf2f5;--ink:#1c2a38;--muted:#465b6c;--accent:#0d675b;--info:#15589b;--violet:#623d88;--amber:#895522;--line:#bccad4;--line2:#d7e0e7;--warn:#82501d;--ok:#146352}
+      #tracker{padding:16px;background:white;border:1px solid #d1dbe2;border-radius:16px}
+      .row-item{padding:12px}
+      .wrap>section,.learn-divider{margin-top:28px}
+      @media(max-width:850px){.frontpage{grid-template-columns:minmax(0,1fr)}}
+      @media(max-width:540px){.masthead{padding-block:10px}.mainnav a{padding-inline:8px}.newsfeature h1{font-size:2.05rem}}
+      @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+      @media(min-width:851px){.feed{max-height:28rem;overflow-y:auto}}
     </style>
   </head>
   <body>
     <div class="wrap">
 
-      <div class="topbar">
+      <header class="masthead"><div class="topbar">
         <div class="logo">
           <svg width="42" height="42" viewBox="0 0 48 48" role="img" aria-label="AI core mark with six branching circuit traces">
             <g stroke="#36E0CC" stroke-width="1.6" fill="none" opacity="0.9">
@@ -334,10 +377,10 @@
         <a href="#ai-attack-news">News</a>
         <a href="#tracker">Tracker</a>
         <a href="#ai-attack-map">Map</a>
-      </nav>
+      </nav></header>
 
       <!-- FIRST SCREEN: news, tracker rail, evidence atlas -->
-      <div class="frontpage">
+      <main class="frontpage">
 
       <!-- AI ATTACK NEWS: lead story and headlines -->
       <section id="ai-attack-news" aria-labelledby="nfTitle">
@@ -354,7 +397,7 @@
         </article>
 
         <div class="headlines">
-          <h3>More reporting</h3>
+          <h2>More reporting</h2>
 
           <a class="hline" href="https://gambit.security/blog-posts/a-single-operator-two-ai-platforms-nine-government-agencies-the-full-technical-report" target="_blank" rel="noopener">
             <span class="hm"><span class="hd">Feb 25, 2026</span><span class="hs">Gambit Security</span><span class="hc">Agent run</span></span>
@@ -364,7 +407,7 @@
 
           <a class="hline" href="https://aws.amazon.com/blogs/security/ai-augmented-threat-actor-accesses-fortigate-devices-at-scale/" target="_blank" rel="noopener">
             <span class="hm"><span class="hd">Feb 20, 2026</span><span class="hs">Amazon Threat Intelligence</span><span class="hc assist">AI assisted</span></span>
-            <span class="ht">AI augmented threat actor accesses FortiGate devices at scale</span>
+            <span class="ht">Amazon traces attacks on 600 FortiGate firewalls across 55 countries</span>
             <span class="hp">Amazon traced intrusions at more than 600 firewalls across 55 countries to exposed management ports and weak credentials.</span>
           </a>
 
@@ -376,7 +419,7 @@
 
           <a class="hline" href="https://cloud.google.com/blog/topics/threat-intelligence/threat-actor-usage-of-ai-tools" target="_blank" rel="noopener">
             <span class="hm"><span class="hd">Nov 5, 2025</span><span class="hs">Google GTIG</span><span class="hc assist">AI in malware</span></span>
-            <span class="ht">Advances in threat actor usage of AI tools</span>
+            <span class="ht">Google documents AI-assisted malware targeting Ukraine</span>
             <span class="hp">Google documented AI-assisted malware in attacks on Ukraine and a separate experimental strain still in testing.</span>
           </a>
 
@@ -390,6 +433,86 @@
 
       <!-- RIGHT RAIL: tracker, then the evidence atlas under it -->
       <div class="rail">
+
+      <section id="ai-attack-map" aria-labelledby="atlasH">
+        <div class="sec-head"><span class="livedot" aria-hidden="true"></span><h2 id="atlasH">Evidence Atlas</h2><span class="tag">5 locations</span></div>
+        <div class="atlas" id="atlasCard">
+          <div class="atlas-head">
+            <span class="at"><b>Locations</b></span>
+            <button class="expandbtn" type="button" id="atlasExpand" aria-expanded="false" aria-controls="atlasCard">Expand map</button>
+          </div>
+          <svg class="atlasmap" viewBox="0 0 1000 460" role="application" aria-label="Evidence Atlas world map, drawn as a vector world map with recognisable coastlines for North and South America, Africa, Europe, Asia and Australia. Diamond pins mark the countries documented in published reports: Ukraine, Mexico, the United States, Singapore as the Asia anchor, and the United Kingdom as the Europe anchor. One dashed line links Russia to Ukraine, the one connection a source report documents, for APT28 PROMPTSTEAL.">
+            <rect x="0" y="0" width="1000" height="460" fill="#04101E"></rect>
+            <g aria-hidden="true">
+              <path class="grat" d="M100,0 V460 M200,0 V460 M300,0 V460 M400,0 V460 M500,0 V460 M600,0 V460 M700,0 V460 M800,0 V460 M900,0 V460"/>
+              <path class="grat" d="M0,64 H1000 M0,128 H1000 M0,192 H1000 M0,256 H1000 M0,320 H1000 M0,384 H1000"/>
+            </g>
+            <g aria-hidden="true">
+              <path class="land" d="M33,64 L69,49 L108,51 L144,51 L181,56 L217,51 L236,54 L244,61 L242,77 L250,89 L264,89 L281,82 L286,72 L278,61 L300,72 L322,77 L333,89 L319,102 L306,110 L308,118 L294,128 L292,133 L289,141 L281,146 L278,151 L278,161 L275,166 L272,159 L267,153 L258,153 L253,156 L239,156 L231,159 L231,169 L231,179 L239,181 L247,181 L250,176 L258,176 L256,189 L269,192 L278,206 L269,210 L260,199 L250,194 L244,192 L231,189 L217,184 L208,179 L200,171 L194,169 L183,156 L175,146 L167,141 L161,136 L156,128 L156,113 L147,102 L133,92 L111,77 L78,82 L61,72 L42,77 Z"/>
+              <path class="land" d="M375,77 L417,56 L439,51 L444,36 L411,18 L361,26 L347,51 L353,66 Z"/>
+              <path class="land" d="M286,212 L300,199 L322,204 L347,215 L361,230 L378,238 L403,250 L392,263 L389,284 L367,297 L356,315 L342,327 L328,335 L319,345 L314,358 L311,368 L303,368 L294,358 L294,343 L297,325 L303,307 L306,281 L306,276 L292,268 L286,261 L278,243 L278,227 L286,220 Z"/>
+              <path class="land" d="M472,151 L483,141 L500,138 L528,135 L531,143 L556,148 L583,151 L589,151 L594,161 L606,174 L611,192 L619,199 L633,202 L642,199 L642,204 L628,217 L614,235 L611,256 L608,281 L597,291 L592,299 L586,304 L575,315 L556,320 L547,312 L542,299 L536,276 L533,256 L536,243 L525,230 L517,220 L508,215 L492,217 L478,217 L464,210 L453,192 L453,179 L458,166 L464,159 Z"/>
+              <path class="land" d="M625,264 L639,271 L634,287 L626,295 L620,281 Z"/>
+              <path class="land" d="M475,135 L475,120 L486,107 L500,105 L506,100 L514,94 L522,92 L517,82 L514,77 L522,69 L536,59 L550,51 L572,49 L583,51 L611,56 L653,56 L694,59 L736,51 L778,33 L806,41 L847,46 L889,46 L931,51 L972,61 L994,64 L972,77 L950,82 L944,95 L933,100 L894,102 L892,113 L875,118 L858,128 L850,133 L858,141 L839,136 L836,151 L828,166 L806,179 L803,199 L794,207 L789,207 L778,212 L786,228 L771,210 L772,199 L761,186 L753,174 L744,176 L736,181 L722,192 L722,197 L714,210 L706,197 L703,189 L700,179 L686,171 L681,166 L667,166 L656,164 L661,174 L650,186 L642,192 L622,199 L617,199 L608,176 L600,164 L597,159 L594,156 L597,146 L600,138 L583,138 L575,136 L564,138 L561,133 L553,123 L550,128 L544,133 L542,128 L536,123 L528,118 L519,120 L508,123 L500,131 L497,135 L485,138 L481,136 Z"/>
+              <path class="land" d="M489,104 L494,97 L492,90 L486,84 L480,88 L478,94 L472,100 L478,103 Z"/>
+              <path class="land" d="M472,97 L483,97 L483,89 L472,92 Z"/>
+              <path class="land" d="M861,151 L869,143 L881,141 L889,138 L892,128 L894,118 L889,115 L886,133 L875,143 L864,146 Z"/>
+              <path class="land" d="M764,217 L778,230 L789,240 L794,245 L786,240 L772,225 Z"/>
+              <path class="land" d="M803,228 L814,222 L828,225 L831,235 L822,240 L806,238 Z"/>
+              <path class="land" d="M783,245 L808,248 L808,253 L783,250 Z"/>
+              <path class="land" d="M833,231 L839,235 L833,240 L828,235 Z"/>
+              <path class="land" d="M864,233 L878,235 L892,238 L906,245 L908,253 L894,250 L881,248 L867,240 Z"/>
+              <path class="land" d="M833,197 L839,189 L839,184 L833,186 Z"/>
+              <path class="land" d="M836,210 L844,212 L842,218 L834,216 Z"/>
+              <ellipse class="land" cx="724" cy="212" rx="4" ry="6"/>
+              <ellipse class="land" cx="836" cy="170" rx="3" ry="6"/>
+              <path class="land" d="M819,312 L828,320 L883,320 L889,327 L903,327 L917,325 L919,317 L925,299 L925,281 L906,279 L894,258 L894,274 L878,269 L875,261 L867,258 L861,263 L850,266 L839,274 L828,281 L817,286 L814,297 Z"/>
+              <path class="land" d="M981,320 L989,327 L983,335 L972,348 L964,345 L967,340 L978,333 Z"/>
+              <path class="land" opacity="0.45" d="M16,436 L120,430 L260,437 L400,431 L540,437 L680,430 L820,437 L940,431 L984,436 L984,452 L16,452 Z"/>
+            </g>
+            <path class="docline" d="M667,90 L600,102" aria-hidden="true"/>
+            <text x="674" y="86" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;font-weight:600;letter-spacing:.08em;fill:#8AA0B5" aria-hidden="true">RUSSIA</text>
+            <g class="pinmark" data-pinindex="0" transform="translate(588,105)" tabindex="0" role="button" aria-label="Pin 1, Ukraine. PROMPTSTEAL target region. Activate to highlight its tracker record.">
+              <circle class="pulse" cx="0" cy="0" r="15"></circle>
+              <path class="diamond" d="M0,-11 L11,0 L0,11 L-11,0 Z"/>
+              <text class="pnum" x="0" y="3.5">1</text>
+              <text class="plabel" x="15" y="3">UKRAINE</text>
+            </g>
+            <g class="pinmark auto" data-pinindex="1" transform="translate(217,170)" tabindex="0" role="button" aria-label="Pin 2, Mexico. Government campaign run by agents. Activate to highlight its tracker record.">
+              <circle class="pulse" cx="0" cy="0" r="15"></circle>
+              <path class="diamond" d="M0,-11 L11,0 L0,11 L-11,0 Z"/>
+              <text class="pnum" x="0" y="3.5">2</text>
+              <text class="plabel" x="-15" y="3" text-anchor="end">MEXICO</text>
+            </g>
+            <g class="pinmark auto" data-pinindex="2" transform="translate(228,128)" tabindex="0" role="button" aria-label="Pin 3, United States. CAIRN aerospace targets. Activate to highlight its tracker record.">
+              <circle class="pulse" cx="0" cy="0" r="15"></circle>
+              <path class="diamond" d="M0,-11 L11,0 L0,11 L-11,0 Z"/>
+              <text class="pnum" x="0" y="3.5">3</text>
+              <text class="plabel" x="15" y="3">UNITED STATES</text>
+            </g>
+            <g class="pinmark auto" data-pinindex="3" transform="translate(788,227)" tabindex="0" role="button" aria-label="Pin 4, Singapore, the anchor for organisations scanned across Asia by PentAGI. Activate to highlight its tracker record.">
+              <circle class="pulse" cx="0" cy="0" r="15"></circle>
+              <path class="diamond" d="M0,-11 L11,0 L0,11 L-11,0 Z"/>
+              <text class="pnum" x="0" y="3.5">4</text>
+              <text class="plabel" x="-15" y="3" text-anchor="end">SINGAPORE</text>
+            </g>
+            <g class="pinmark" data-pinindex="4" transform="translate(494,92)" tabindex="0" role="button" aria-label="Pin 5, United Kingdom, the anchor for MIDNIGHT NEPTUNE targets in Europe. Activate to highlight its tracker record.">
+              <circle class="pulse" cx="0" cy="0" r="15"></circle>
+              <path class="diamond" d="M0,-11 L11,0 L0,11 L-11,0 Z"/>
+              <text class="pnum" x="0" y="3.5">5</text>
+              <text class="plabel" x="-15" y="-4" text-anchor="end">UNITED KINGDOM</text>
+            </g>
+          </svg>
+          <div class="atlas-legend">
+            <span><span class="sw teal" aria-hidden="true"></span>Documented country</span>
+            <span><span class="sw violet" aria-hidden="true"></span>Autonomous evidence leads the pin</span>
+            <span><span class="sw amber" aria-hidden="true"></span>New since your last visit · pulses once</span>
+            <span><span class="sw line" aria-hidden="true"></span>Documented connection · Russia to Ukraine, APT28, per GTIG</span>
+          </div>
+        </div>
+        
+        <p class="atlasnote">Singapore and the United Kingdom represent regional reports for Asia and Europe. Select a pin to see related incidents.</p>
+      </section>
 
       <section id="tracker" aria-labelledby="trackH">
         <div class="sec-head"><span class="livedot" aria-hidden="true"></span><h2 id="trackH">AI Attack Tracker</h2><span class="tag">11 records · newest first</span></div>
@@ -535,88 +658,10 @@
       </section>
 
       <!-- EVIDENCE ATLAS: compact map under the tracker -->
-      <section id="ai-attack-map" aria-labelledby="atlasH">
-        <div class="sec-head"><span class="livedot" aria-hidden="true"></span><h2 id="atlasH">AI Attack Map</h2><span class="tag">Evidence Atlas · 5 pins</span></div>
-        <div class="atlas" id="atlasCard">
-          <div class="atlas-head">
-            <span class="at"><b>Evidence Atlas</b> · Country level references only · Verified published reports</span>
-            <button class="expandbtn" type="button" id="atlasExpand" aria-expanded="false" aria-controls="atlasCard">Expand map</button>
-          </div>
-          <svg class="atlasmap" viewBox="0 0 1000 460" role="application" aria-label="Evidence Atlas world map, drawn as a vector world map with recognisable coastlines for North and South America, Africa, Europe, Asia and Australia. Diamond pins mark the countries documented in published reports: Ukraine, Mexico, the United States, Singapore as the Asia anchor, and the United Kingdom as the Europe anchor. One dashed line links Russia to Ukraine, the one connection a source report documents, for APT28 PROMPTSTEAL.">
-            <rect x="0" y="0" width="1000" height="460" fill="#04101E"></rect>
-            <g aria-hidden="true">
-              <path class="grat" d="M100,0 V460 M200,0 V460 M300,0 V460 M400,0 V460 M500,0 V460 M600,0 V460 M700,0 V460 M800,0 V460 M900,0 V460"/>
-              <path class="grat" d="M0,64 H1000 M0,128 H1000 M0,192 H1000 M0,256 H1000 M0,320 H1000 M0,384 H1000"/>
-            </g>
-            <g aria-hidden="true">
-              <path class="land" d="M33,64 L69,49 L108,51 L144,51 L181,56 L217,51 L236,54 L244,61 L242,77 L250,89 L264,89 L281,82 L286,72 L278,61 L300,72 L322,77 L333,89 L319,102 L306,110 L308,118 L294,128 L292,133 L289,141 L281,146 L278,151 L278,161 L275,166 L272,159 L267,153 L258,153 L253,156 L239,156 L231,159 L231,169 L231,179 L239,181 L247,181 L250,176 L258,176 L256,189 L269,192 L278,206 L269,210 L260,199 L250,194 L244,192 L231,189 L217,184 L208,179 L200,171 L194,169 L183,156 L175,146 L167,141 L161,136 L156,128 L156,113 L147,102 L133,92 L111,77 L78,82 L61,72 L42,77 Z"/>
-              <path class="land" d="M375,77 L417,56 L439,51 L444,36 L411,18 L361,26 L347,51 L353,66 Z"/>
-              <path class="land" d="M286,212 L300,199 L322,204 L347,215 L361,230 L378,238 L403,250 L392,263 L389,284 L367,297 L356,315 L342,327 L328,335 L319,345 L314,358 L311,368 L303,368 L294,358 L294,343 L297,325 L303,307 L306,281 L306,276 L292,268 L286,261 L278,243 L278,227 L286,220 Z"/>
-              <path class="land" d="M472,151 L483,141 L500,138 L528,135 L531,143 L556,148 L583,151 L589,151 L594,161 L606,174 L611,192 L619,199 L633,202 L642,199 L642,204 L628,217 L614,235 L611,256 L608,281 L597,291 L592,299 L586,304 L575,315 L556,320 L547,312 L542,299 L536,276 L533,256 L536,243 L525,230 L517,220 L508,215 L492,217 L478,217 L464,210 L453,192 L453,179 L458,166 L464,159 Z"/>
-              <path class="land" d="M625,264 L639,271 L634,287 L626,295 L620,281 Z"/>
-              <path class="land" d="M475,135 L475,120 L486,107 L500,105 L506,100 L514,94 L522,92 L517,82 L514,77 L522,69 L536,59 L550,51 L572,49 L583,51 L611,56 L653,56 L694,59 L736,51 L778,33 L806,41 L847,46 L889,46 L931,51 L972,61 L994,64 L972,77 L950,82 L944,95 L933,100 L894,102 L892,113 L875,118 L858,128 L850,133 L858,141 L839,136 L836,151 L828,166 L806,179 L803,199 L794,207 L789,207 L778,212 L786,228 L771,210 L772,199 L761,186 L753,174 L744,176 L736,181 L722,192 L722,197 L714,210 L706,197 L703,189 L700,179 L686,171 L681,166 L667,166 L656,164 L661,174 L650,186 L642,192 L622,199 L617,199 L608,176 L600,164 L597,159 L594,156 L597,146 L600,138 L583,138 L575,136 L564,138 L561,133 L553,123 L550,128 L544,133 L542,128 L536,123 L528,118 L519,120 L508,123 L500,131 L497,135 L485,138 L481,136 Z"/>
-              <path class="land" d="M489,104 L494,97 L492,90 L486,84 L480,88 L478,94 L472,100 L478,103 Z"/>
-              <path class="land" d="M472,97 L483,97 L483,89 L472,92 Z"/>
-              <path class="land" d="M861,151 L869,143 L881,141 L889,138 L892,128 L894,118 L889,115 L886,133 L875,143 L864,146 Z"/>
-              <path class="land" d="M764,217 L778,230 L789,240 L794,245 L786,240 L772,225 Z"/>
-              <path class="land" d="M803,228 L814,222 L828,225 L831,235 L822,240 L806,238 Z"/>
-              <path class="land" d="M783,245 L808,248 L808,253 L783,250 Z"/>
-              <path class="land" d="M833,231 L839,235 L833,240 L828,235 Z"/>
-              <path class="land" d="M864,233 L878,235 L892,238 L906,245 L908,253 L894,250 L881,248 L867,240 Z"/>
-              <path class="land" d="M833,197 L839,189 L839,184 L833,186 Z"/>
-              <path class="land" d="M836,210 L844,212 L842,218 L834,216 Z"/>
-              <ellipse class="land" cx="724" cy="212" rx="4" ry="6"/>
-              <ellipse class="land" cx="836" cy="170" rx="3" ry="6"/>
-              <path class="land" d="M819,312 L828,320 L883,320 L889,327 L903,327 L917,325 L919,317 L925,299 L925,281 L906,279 L894,258 L894,274 L878,269 L875,261 L867,258 L861,263 L850,266 L839,274 L828,281 L817,286 L814,297 Z"/>
-              <path class="land" d="M981,320 L989,327 L983,335 L972,348 L964,345 L967,340 L978,333 Z"/>
-              <path class="land" opacity="0.45" d="M16,436 L120,430 L260,437 L400,431 L540,437 L680,430 L820,437 L940,431 L984,436 L984,452 L16,452 Z"/>
-            </g>
-            <path class="docline" d="M667,90 L600,102" aria-hidden="true"/>
-            <text x="674" y="86" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;font-weight:600;letter-spacing:.08em;fill:#8AA0B5" aria-hidden="true">RUSSIA</text>
-            <g class="pinmark" data-pinindex="0" transform="translate(588,105)" tabindex="0" role="button" aria-label="Pin 1, Ukraine. PROMPTSTEAL target region. Activate to highlight its tracker record.">
-              <circle class="pulse" cx="0" cy="0" r="15"></circle>
-              <path class="diamond" d="M0,-11 L11,0 L0,11 L-11,0 Z"/>
-              <text class="pnum" x="0" y="3.5">1</text>
-              <text class="plabel" x="15" y="3">UKRAINE</text>
-            </g>
-            <g class="pinmark auto" data-pinindex="1" transform="translate(217,170)" tabindex="0" role="button" aria-label="Pin 2, Mexico. Government campaign run by agents. Activate to highlight its tracker record.">
-              <circle class="pulse" cx="0" cy="0" r="15"></circle>
-              <path class="diamond" d="M0,-11 L11,0 L0,11 L-11,0 Z"/>
-              <text class="pnum" x="0" y="3.5">2</text>
-              <text class="plabel" x="-15" y="3" text-anchor="end">MEXICO</text>
-            </g>
-            <g class="pinmark auto" data-pinindex="2" transform="translate(228,128)" tabindex="0" role="button" aria-label="Pin 3, United States. CAIRN aerospace targets. Activate to highlight its tracker record.">
-              <circle class="pulse" cx="0" cy="0" r="15"></circle>
-              <path class="diamond" d="M0,-11 L11,0 L0,11 L-11,0 Z"/>
-              <text class="pnum" x="0" y="3.5">3</text>
-              <text class="plabel" x="15" y="3">UNITED STATES</text>
-            </g>
-            <g class="pinmark auto" data-pinindex="3" transform="translate(788,227)" tabindex="0" role="button" aria-label="Pin 4, Singapore, the anchor for organisations scanned across Asia by PentAGI. Activate to highlight its tracker record.">
-              <circle class="pulse" cx="0" cy="0" r="15"></circle>
-              <path class="diamond" d="M0,-11 L11,0 L0,11 L-11,0 Z"/>
-              <text class="pnum" x="0" y="3.5">4</text>
-              <text class="plabel" x="-15" y="3" text-anchor="end">SINGAPORE</text>
-            </g>
-            <g class="pinmark" data-pinindex="4" transform="translate(494,92)" tabindex="0" role="button" aria-label="Pin 5, United Kingdom, the anchor for MIDNIGHT NEPTUNE targets in Europe. Activate to highlight its tracker record.">
-              <circle class="pulse" cx="0" cy="0" r="15"></circle>
-              <path class="diamond" d="M0,-11 L11,0 L0,11 L-11,0 Z"/>
-              <text class="pnum" x="0" y="3.5">5</text>
-              <text class="plabel" x="-15" y="-4" text-anchor="end">UNITED KINGDOM</text>
-            </g>
-          </svg>
-          <div class="atlas-legend">
-            <span><span class="sw teal" aria-hidden="true"></span>Documented country</span>
-            <span><span class="sw violet" aria-hidden="true"></span>Autonomous evidence leads the pin</span>
-            <span><span class="sw amber" aria-hidden="true"></span>New since your last visit · pulses once</span>
-            <span><span class="sw line" aria-hidden="true"></span>Documented connection · Russia to Ukraine, APT28, per GTIG</span>
-          </div>
-        </div>
-        
-        <p class="atlasnote">Singapore and the United Kingdom represent regional reports for Asia and Europe. Select a pin to see related incidents.</p>
-      </section>
+
 
       </div><!-- /rail -->
-      </div><!-- /frontpage -->
+      </main><!-- /frontpage -->
 
       <!-- SOCIAL POSTS -->
       <section id="social" aria-labelledby="socialH">

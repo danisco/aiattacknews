@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="dark" />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23050B14'/%3E%3Cpath d='M16 7 L23 16 L16 25 L9 16 Z' fill='none' stroke='%2336E0CC' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%2336E0CC'/%3E%3C/svg%3E" />
-    <title>AI Attack Tracker | AI Attack News | Live AI Attack Map and Latest AI Attack News Today</title>
+    <title>AI Attack News | Reporting and Incident Tracker</title>
     <meta name="description" content="AI Attack News is the news page of the AI Attack Tracker. Read the latest AI attack news today, with verified AI attack news on autonomous AI attacks, agentic AI attacks, AI assisted intrusions, AI malware and AI cyber attacks worldwide. Every story in AI Attack News links to the published report by the company or agency that found it, and to its record on the live AI attack map and AI attack tracker." />
     <meta name="keywords" content="AI attack news, AI Attack News, ai attack news, AI attack news today, latest AI attack news, AI attack news today live, AI cyber attack news, autonomous AI attack news, agentic AI attack news, AI hack news, AI attack tracker, AI Attack Tracker, AI attack map, AI Attack Map, AI cyber attack tracker, live AI attack tracker, AI threat tracker, AI incident tracker, autonomous AI attack tracker, agentic AI attack tracker, AI malware tracker, AI attack tracking, track AI attacks, aiattacknews.com, aiattacktracker.com, aiattackmap.com" />
     <meta name="robots" content="index, follow" />
@@ -107,9 +107,9 @@
       .newsfeature .nfmeta .nd{color:var(--accent);font-weight:600}
       .newsfeature .nfmeta .ns{color:var(--muted)}
       .newsfeature .nfmeta .nlabel{color:#2A1E05;background:var(--amber);font-weight:700;padding:2px 7px;letter-spacing:.06em}
-      .newsfeature h3{font-size:clamp(1.08rem,2vw,1.32rem);font-weight:700;margin-top:5px;max-width:24em}
-      .newsfeature h3 a{color:var(--ink);text-decoration:none}
-      .newsfeature h3 a:hover{text-decoration:underline}
+      .newsfeature h1{font-size:clamp(1.8rem,3.3vw,3.25rem);line-height:1.07;letter-spacing:-.035em;font-weight:700;margin-top:5px;max-width:24em}
+      .newsfeature h1 a{color:var(--ink);text-decoration:none}
+      .newsfeature h1 a:hover{text-decoration:underline}
       .newsfeature .nfsummary{margin:5px 0 0;font-size:.87rem;color:var(--muted);line-height:1.45;max-width:62em}
       .newsfeature .nfsummary strong{color:var(--ink)}
       .nfacts{display:flex;flex-wrap:wrap;gap:5px 22px;margin-top:6px;font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
@@ -305,6 +305,10 @@
         .sec-head .tag{margin-left:0;flex-basis:100%}
         .strow{grid-template-columns:1fr}
       }
+    .newsfeature{padding:clamp(16px,2.6vw,34px)}
+      .newsfeature .nfsummary{font-size:1rem;line-height:1.55;margin:12px 0}
+      .frontpage{margin-top:16px}
+      .hline{padding:12px 2px}
     </style>
   </head>
   <body>
@@ -321,56 +325,28 @@
             <circle cx="24" cy="24" r="3.2" fill="#A78BFA"/>
           </svg>
           <div>
-            <div class="name">AI Attack <span>Tracker</span></div>
-            <div class="url">aiattacknews.com</div>
+            <div class="name">AI Attack <span>News</span></div>
           </div>
         </div>
-        <span class="statuschip"><span class="cdot" aria-hidden="true"></span>Monitoring sources · Refreshed Nov 17, 2026</span>
       </div>
 
       <nav class="mainnav" aria-label="AI Attack Tracker and AI Attack News main navigation">
-        <span class="navbrand">Signal Atlas</span>
         <a href="#ai-attack-news">News</a>
         <a href="#tracker">Tracker</a>
         <a href="#ai-attack-map">Map</a>
-        <a href="#social">Updates</a>
-        <a href="#status-board">Status</a>
-        <a href="#api">Data</a>
-        <a href="#learn">Learn</a>
-        <span class="navlive"><span class="livedot" aria-hidden="true"></span>Live tracking</span>
       </nav>
-
-      <div class="since" id="sinceLine" role="status">
-        <span class="sk">Since your last visit</span>
-        <span id="sinceText">Checking the verified record against your last visit on this device.</span>
-      </div>
-
-      <header class="pagehead">
-        <p class="kickerline">AI Attack News · AI Attack Tracker · Evidence Atlas</p>
-        <h1>AI Attack <span>News</span>, tracked as evidence</h1>
-        <p class="subhead">News first, the tracker beside it, the map under the tracker. Verified reports only.</p>
-      </header>
-
-      <div class="ticker" aria-label="AI Attack Tracker and AI Attack News feed summary">
-        <span><span class="k">Verified reports</span> <span class="v">11</span></span>
-        <span><span class="k">Latest publication</span> <span class="v">Nov 16, 2026</span></span>
-        <span><span class="k">Map pins</span> <span class="v">5 documented countries</span></span>
-        <span><span class="k">Listing rule</span> <span class="v">Finder publishes first</span></span>
-      </div>
 
       <!-- FIRST SCREEN: news, tracker rail, evidence atlas -->
       <div class="frontpage">
 
       <!-- AI ATTACK NEWS: lead story and headlines -->
-      <section id="ai-attack-news" aria-labelledby="newsH">
+      <section id="ai-attack-news" aria-labelledby="nfTitle">
         <span id="latest-reporting" aria-hidden="true"></span>
-        <div class="sec-head"><span class="livedot" aria-hidden="true"></span><h2 id="newsH">AI Attack News</h2><span class="tag">Latest AI attack news today · Updated Nov 17, 2026</span></div>
 
         <article class="newsfeature" aria-labelledby="nfTitle">
-          <div class="nfmeta"><span class="nlabel">Lead story</span><span class="nd">Nov 16, 2026 · 1 day ago</span><span class="ns">Google GTIG</span><span class="ns">Agent run · High and Medium</span></div>
-          <h3 id="nfTitle"><a href="https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold" target="_blank" rel="noopener">Agentic threat activity crosses a significant threshold</a></h3>
-          <p class="nfsummary">The newest AI attack news is a step change in autonomy. Google GTIG reports <strong>exploit_agent</strong>, a system found on an exposed staging server that compares software before and after a patch ships, works out the flaw the patch closed, drafts an exploit and runs it with no human in the loop. The same report places the open source agent frameworks <strong>CAIRN and PentAGI</strong> inside live intrusions, describes <strong>MIDNIGHT NEPTUNE</strong> turning a coding assistant setup into a backdoor route into crypto targets, and updates <strong>LLMJacking</strong>, where actors break into cloud environments and burn the victim AI bills and quotas as the prize itself.</p>
-          <div class="nfacts"><span>Targets <b>Web software · US aerospace · Asia · Crypto</b></span><span>Tracker records <b>4 in this report</b></span><span>Evidence <b>Provider reported and Confirmed</b></span></div>
+          <div class="nfmeta"><span class="ns">Google Threat Intelligence Group</span><time class="nd" datetime="2026-11-16">Nov 16, 2026</time></div>
+          <h1 id="nfTitle"><a href="https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold" target="_blank" rel="noopener">Google finds an AI agent that builds and runs exploits on its own</a></h1>
+          <p class="nfsummary">Researchers found the agent on an exposed staging server. In separate intrusions targeting U.S. aerospace and organizations in Asia, Google also observed attackers using open-source AI agents.</p>
           <div class="nlinks">
             <a class="primary" href="https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold" target="_blank" rel="noopener">Read the original report</a>
             <a class="secondary" href="#tracker">See it in the tracker</a>
@@ -378,36 +354,36 @@
         </article>
 
         <div class="headlines">
-          <h3>More headlines · newest first</h3>
+          <h3>More reporting</h3>
 
           <a class="hline" href="https://gambit.security/blog-posts/a-single-operator-two-ai-platforms-nine-government-agencies-the-full-technical-report" target="_blank" rel="noopener">
             <span class="hm"><span class="hd">Feb 25, 2026</span><span class="hs">Gambit Security</span><span class="hc">Agent run</span></span>
             <span class="ht">A single operator, two AI platforms, nine government agencies</span>
-            <span class="hp">One operator used Claude Code and GPT 4.1 against nine Mexican government organisations. Gambit reconstructed the campaign from recovered logs counting <strong>1,088 prompts and 5,317 AI generated commands</strong>, with AI running about 75 percent of remote actions. Several named agencies denied being breached, so the tracker grades this story partly contested and says so on the record.</span>
+            <span class="hp">Gambit traced the campaign to one operator. Several agencies disputed the reported breaches.</span>
           </a>
 
           <a class="hline" href="https://aws.amazon.com/blogs/security/ai-augmented-threat-actor-accesses-fortigate-devices-at-scale/" target="_blank" rel="noopener">
             <span class="hm"><span class="hd">Feb 20, 2026</span><span class="hs">Amazon Threat Intelligence</span><span class="hc assist">AI assisted</span></span>
             <span class="ht">AI augmented threat actor accesses FortiGate devices at scale</span>
-            <span class="hp">Amazon reports one actor assessed as low to medium skill, significantly augmented by AI at every phase, reaching <strong>600 plus FortiGate firewalls across 55 plus countries</strong>. Entry came through exposed management ports and weak credentials, not a firewall flaw. The tracker grades the scale critical and the finding confirmed.</span>
+            <span class="hp">Amazon traced intrusions at more than 600 firewalls across 55 countries to exposed management ports and weak credentials.</span>
           </a>
 
           <a class="hline" href="https://www.anthropic.com/news/disrupting-AI-espionage" target="_blank" rel="noopener">
             <span class="hm"><span class="hd">Nov 13, 2025</span><span class="hs">Anthropic</span><span class="hc">Agent run</span></span>
             <span class="ht">Disrupting the first reported AI orchestrated cyber espionage campaign</span>
-            <span class="hp">Anthropic describes <strong>GTG 1002</strong> as the first reported AI orchestrated espionage campaign, assessed as Chinese state sponsored, aimed at roughly 30 global targets with AI performing an estimated 80 to 90 percent of the campaign. The same disclosure covers <strong>GTG 2002</strong>, extortion run through Claude Code against 17 organisations.</span>
+            <span class="hp">Anthropic says a suspected Chinese state-sponsored group used Claude Code in a campaign against roughly 30 targets.</span>
           </a>
 
           <a class="hline" href="https://cloud.google.com/blog/topics/threat-intelligence/threat-actor-usage-of-ai-tools" target="_blank" rel="noopener">
             <span class="hm"><span class="hd">Nov 5, 2025</span><span class="hs">Google GTIG</span><span class="hc assist">AI in malware</span></span>
             <span class="ht">Advances in threat actor usage of AI tools</span>
-            <span class="hp">This GTIG report introduced two malware stories that still define the category. <strong>PROMPTSTEAL</strong>, used by Russian APT28 against Ukraine, asks a language model what commands to run while it operates. <strong>PROMPTFLUX</strong> asks Gemini to rewrite and obfuscate itself, in one variant every hour, and GTIG places it still in testing with no compromise of a network or device shown.</span>
+            <span class="hp">Google documented AI-assisted malware in attacks on Ukraine and a separate experimental strain still in testing.</span>
           </a>
 
           <a class="hline" href="https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai" target="_blank" rel="noopener">
             <span class="hm"><span class="hd">Analysis · Q2 2026 activity</span><span class="hs">Google GTIG</span><span class="hc">Background</span></span>
             <span class="ht">From prompting to autonomy: the evolution of adversarial AI</span>
-            <span class="hp">The background read for the whole AI attack news page. GTIG traces the move from attackers prompting models for help to agents planning and running work on their own, including a Q2 2026 case where attackers broke into a cloud resource and then <strong>planned, built and ran a mass credential harvesting campaign with agents in under six hours</strong>.</span>
+            <span class="hp">Google describes a campaign in which attackers used AI agents to organize credential theft in under six hours.</span>
           </a>
         </div>
       </section>
@@ -429,7 +405,7 @@
         <div class="feed" id="cards">
 
           <article class="row-item" data-id="exploit-agent-2026" data-date="2026-11-16" data-cat="autonomous" data-pinlabel="No pin · worldwide campaign" data-source="https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold" tabindex="0" title="Open detail">
-            <div class="r-top"><span class="c-date">NOV 16, 2026 <span class="rel">· 1 day ago</span><span class="delay">Delay <b>not stated</b></span></span><span class="newtag">New</span><span class="spacer"></span><span class="c-sev"><span class="sev sev3"><span class="bars"><i></i><i></i><i></i><i class="off"></i></span>High</span></span></div>
+            <div class="r-top"><span class="c-date">NOV 16, 2026 <span class="delay">Delay <b>not stated</b></span></span><span class="newtag">New</span><span class="spacer"></span><span class="c-sev"><span class="sev sev3"><span class="bars"><i></i><i></i><i></i><i class="off"></i></span>High</span></span></div>
             <div class="c-main">
               <h3>exploit_agent: exploits built and fired with no human in the loop</h3>
               <p>Found on an exposed staging server. Compares software before and after a patch ships, derives the flaw the patch closed, drafts an exploit and runs it on its own. Autonomy: fully autonomous, per GTIG.</p>
@@ -439,7 +415,7 @@
           </article>
 
           <article class="row-item" data-id="cairn-pentagi-2026" data-date="2026-11-16" data-cat="autonomous" data-pin="2,3" data-pinlabel="United States · Singapore (Asia anchor)" data-source="https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold" tabindex="0" title="Open detail">
-            <div class="r-top"><span class="c-date">NOV 16, 2026 <span class="rel">· 1 day ago</span><span class="delay">Delay <b>≈1 mo</b></span></span><span class="newtag">New</span><span class="spacer"></span><span class="c-sev"><span class="sev sev3"><span class="bars"><i></i><i></i><i></i><i class="off"></i></span>High</span></span></div>
+            <div class="r-top"><span class="c-date">NOV 16, 2026 <span class="delay">Delay <b>≈1 mo</b></span></span><span class="newtag">New</span><span class="spacer"></span><span class="c-sev"><span class="sev sev3"><span class="bars"><i></i><i></i><i></i><i class="off"></i></span>High</span></span></div>
             <div class="c-main">
               <h3>CAIRN and PentAGI: agent frameworks inside live intrusions</h3>
               <p>Open source multi agent frameworks automating phases of real intrusions. CAIRN seen against US aerospace targets. A customised PentAGI platform scanned organisations across Asia.</p>
@@ -449,7 +425,7 @@
           </article>
 
           <article class="row-item" data-id="midnight-neptune-2026" data-date="2026-11-16" data-cat="assisted" data-pin="4" data-pinlabel="United Kingdom (Europe anchor)" data-source="https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold" tabindex="0" title="Open detail">
-            <div class="r-top"><span class="c-date">NOV 16, 2026 <span class="rel">· 1 day ago</span><span class="delay">Delay <b>not stated</b></span></span><span class="newtag">New</span><span class="spacer"></span><span class="c-sev"><span class="sev sev2"><span class="bars"><i></i><i></i><i class="off"></i><i class="off"></i></span>Medium</span></span></div>
+            <div class="r-top"><span class="c-date">NOV 16, 2026 <span class="delay">Delay <b>not stated</b></span></span><span class="newtag">New</span><span class="spacer"></span><span class="c-sev"><span class="sev sev2"><span class="bars"><i></i><i></i><i class="off"></i><i class="off"></i></span>Medium</span></span></div>
             <div class="c-main">
               <h3>MIDNIGHT NEPTUNE: a coding assistant turned into a backdoor</h3>
               <p>Cluster GTIG suspects is North Korean. Fake recruiter profiles, then a rigged coding assistant setup as the channel in.</p>
@@ -459,7 +435,7 @@
           </article>
 
           <article class="row-item" data-id="credential-harvesting-2026" data-date="2026-06-30" data-cat="autonomous" data-pinlabel="No pin · no single location" data-source="https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai" tabindex="0" title="Open detail">
-            <div class="r-top"><span class="c-date">Q2 2026 <span class="rel">· ≈5 mo ago</span><span class="delay">Delay <b>not stated</b></span></span><span class="newtag">New</span><span class="spacer"></span><span class="c-sev"><span class="sev sev3"><span class="bars"><i></i><i></i><i></i><i class="off"></i></span>High</span></span></div>
+            <div class="r-top"><span class="c-date">Q2 2026 <span class="delay">Delay <b>not stated</b></span></span><span class="newtag">New</span><span class="spacer"></span><span class="c-sev"><span class="sev sev3"><span class="bars"><i></i><i></i><i></i><i class="off"></i></span>High</span></span></div>
             <div class="c-main">
               <h3>Credential harvesting planned and run by agents in under six hours</h3>
               <p>Attackers broke into a cloud resource, then planned, built and ran a mass credential harvesting campaign with agents in under six hours. Same reporting covers supply chain tricks aimed at AI coding assistants.</p>
@@ -469,7 +445,7 @@
           </article>
 
           <article class="row-item" data-id="mexico-gov-2026" data-date="2026-02-25" data-cat="autonomous" data-pin="1" data-pinlabel="Mexico" data-source="https://gambit.security/blog-posts/a-single-operator-two-ai-platforms-nine-government-agencies-the-full-technical-report" tabindex="0" title="Open detail">
-            <div class="r-top"><span class="c-date">FEB 25, 2026 <span class="rel">· ≈9 mo ago</span><span class="delay">Delay <b>not stated</b></span></span><span class="newtag">New</span><span class="spacer"></span><span class="c-sev"><span class="sev sev3"><span class="bars"><i></i><i></i><i></i><i class="off"></i></span>High</span></span></div>
+            <div class="r-top"><span class="c-date">FEB 25, 2026 <span class="delay">Delay <b>not stated</b></span></span><span class="newtag">New</span><span class="spacer"></span><span class="c-sev"><span class="sev sev3"><span class="bars"><i></i><i></i><i></i><i class="off"></i></span>High</span></span></div>
             <div class="c-main">
               <h3>One operator against nine Mexican government organisations</h3>
               <p>Claude Code and GPT 4.1. Recovered logs: 1,088 prompts, 5,317 AI generated commands, AI running about 75 percent of remote actions. Several named agencies denied being breached.</p>
@@ -479,7 +455,7 @@
           </article>
 
           <article class="row-item" data-id="fortigate-2026" data-date="2026-02-20" data-cat="assisted" data-pinlabel="No pin · 55 plus countries" data-source="https://aws.amazon.com/blogs/security/ai-augmented-threat-actor-accesses-fortigate-devices-at-scale/" tabindex="0" title="Open detail">
-            <div class="r-top"><span class="c-date">FEB 20, 2026 <span class="rel">· ≈9 mo ago</span><span class="delay">Delay <b>not stated</b></span></span><span class="newtag">New</span><span class="spacer"></span><span class="c-sev"><span class="sev sev4"><span class="bars"><i></i><i></i><i></i><i></i></span>Critical</span></span></div>
+            <div class="r-top"><span class="c-date">FEB 20, 2026 <span class="delay">Delay <b>not stated</b></span></span><span class="newtag">New</span><span class="spacer"></span><span class="c-sev"><span class="sev sev4"><span class="bars"><i></i><i></i><i></i><i></i></span>Critical</span></span></div>
             <div class="c-main">
               <h3>600 plus firewalls in 55 plus countries, one low skill actor</h3>
               <p>Actor assessed low to medium skill, significantly augmented by AI at every phase. Entry through exposed management ports and weak credentials, not a firewall flaw.</p>
@@ -489,7 +465,7 @@
           </article>
 
           <article class="row-item" data-id="gtg-1002-2025" data-date="2025-11-13" data-cat="autonomous" data-pinlabel="No pin · worldwide campaign" data-source="https://www.anthropic.com/news/disrupting-AI-espionage" tabindex="0" title="Open detail">
-            <div class="r-top"><span class="c-date">NOV 13, 2025 <span class="rel">· 1 yr ago</span><span class="delay">Delay <b>not stated</b></span></span><span class="newtag">New</span><span class="spacer"></span><span class="c-sev"><span class="sev sev4"><span class="bars"><i></i><i></i><i></i><i></i></span>Critical</span></span></div>
+            <div class="r-top"><span class="c-date">NOV 13, 2025 <span class="delay">Delay <b>not stated</b></span></span><span class="newtag">New</span><span class="spacer"></span><span class="c-sev"><span class="sev sev4"><span class="bars"><i></i><i></i><i></i><i></i></span>Critical</span></span></div>
             <div class="c-main">
               <h3>GTG 1002: the first reported AI orchestrated espionage campaign</h3>
               <p>Group assessed as Chinese state sponsored. Espionage against roughly 30 global targets, AI performing an estimated 80 to 90 percent of the campaign.</p>
@@ -499,7 +475,7 @@
           </article>
 
           <article class="row-item" data-id="promptsteal-2025" data-date="2025-11-05" data-cat="malware" data-pin="0" data-pinlabel="Ukraine" data-source="https://cloud.google.com/blog/topics/threat-intelligence/threat-actor-usage-of-ai-tools" tabindex="0" title="Open detail">
-            <div class="r-top"><span class="c-date">NOV 5, 2025 <span class="rel">· ≈1 yr ago</span><span class="delay">Delay <b>≈1 mo</b></span></span><span class="newtag">New</span><span class="spacer"></span><span class="c-sev"><span class="sev sev3"><span class="bars"><i></i><i></i><i></i><i class="off"></i></span>High</span></span></div>
+            <div class="r-top"><span class="c-date">NOV 5, 2025 <span class="delay">Delay <b>≈1 mo</b></span></span><span class="newtag">New</span><span class="spacer"></span><span class="c-sev"><span class="sev sev3"><span class="bars"><i></i><i></i><i></i><i class="off"></i></span>High</span></span></div>
             <div class="c-main">
               <h3>PROMPTSTEAL: malware that asks an AI what to do next</h3>
               <p>Used by Russian APT28 against Ukraine. Instead of fixed commands, the malware asks a language model to generate them while it runs, then ships documents and system information out. First reported by CERT UA, Jul 2025.</p>
@@ -509,7 +485,7 @@
           </article>
 
           <article class="row-item" data-id="promptflux-2025" data-date="2025-11-05" data-cat="experimental" data-pinlabel="No pin · no target demonstrated" data-source="https://cloud.google.com/blog/topics/threat-intelligence/threat-actor-usage-of-ai-tools" tabindex="0" title="Open detail">
-            <div class="r-top"><span class="c-date">NOV 5, 2025 <span class="rel">· ≈1 yr ago</span><span class="delay">Delay <b>not stated</b></span></span><span class="newtag">New</span><span class="spacer"></span><span class="c-sev"><span class="sev sev1"><span class="bars"><i></i><i class="off"></i><i class="off"></i><i class="off"></i></span>Low</span></span></div>
+            <div class="r-top"><span class="c-date">NOV 5, 2025 <span class="delay">Delay <b>not stated</b></span></span><span class="newtag">New</span><span class="spacer"></span><span class="c-sev"><span class="sev sev1"><span class="bars"><i></i><i class="off"></i><i class="off"></i><i class="off"></i></span>Low</span></span></div>
             <div class="c-main">
               <h3>PROMPTFLUX: malware that asks Gemini to rewrite itself</h3>
               <p>Dropper prompting the Gemini API for fresh obfuscation, in one variant rewriting its own source every hour. Still in testing, no compromise of any network or device shown, per GTIG.</p>
@@ -519,7 +495,7 @@
           </article>
 
           <article class="row-item" data-id="gtg-2002-2025" data-date="2025-08-15" data-cat="assisted" data-pinlabel="No pin · location not established" data-source="https://www.anthropic.com/news/disrupting-AI-espionage" tabindex="0" title="Open detail">
-            <div class="r-top"><span class="c-date">AUG 2025 <span class="rel">· ≈15 mo ago</span><span class="delay">Delay <b>≤1 mo</b></span></span><span class="newtag">New</span><span class="spacer"></span><span class="c-sev"><span class="sev sev3"><span class="bars"><i></i><i></i><i></i><i class="off"></i></span>High</span></span></div>
+            <div class="r-top"><span class="c-date">AUG 2025 <span class="delay">Delay <b>≤1 mo</b></span></span><span class="newtag">New</span><span class="spacer"></span><span class="c-sev"><span class="sev sev3"><span class="bars"><i></i><i></i><i></i><i class="off"></i></span>High</span></span></div>
             <div class="c-main">
               <h3>GTG 2002: extortion run through Claude Code</h3>
               <p>One cybercriminal used Claude Code as the operational core of a data extortion campaign against 17 organisations.</p>
@@ -529,7 +505,7 @@
           </article>
 
           <article class="row-item" data-id="llmjacking-2026" data-date="2026-01-01" data-cat="malware" data-pinlabel="No pin · location not established" data-source="https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold" tabindex="0" title="Open detail">
-            <div class="r-top"><span class="c-date">2026 <span class="rel">· in 2026</span><span class="delay">Delay <b>not stated</b></span></span><span class="newtag">New</span><span class="spacer"></span><span class="c-sev"><span class="sev sev2"><span class="bars"><i></i><i></i><i class="off"></i><i class="off"></i></span>Medium</span></span></div>
+            <div class="r-top"><span class="c-date">2026 <span class="delay">Delay <b>not stated</b></span></span><span class="newtag">New</span><span class="spacer"></span><span class="c-sev"><span class="sev sev2"><span class="bars"><i></i><i></i><i class="off"></i><i class="off"></i></span>Medium</span></span></div>
             <div class="c-main">
               <h3>LLMJacking: hijacked cloud AI bills as a business model</h3>
               <p>Mandiant responded to several cases where actors broke into cloud environments and burned victim compute and model quotas for their own workloads. The AI is the loot, not the weapon.</p>
@@ -635,8 +611,8 @@
             <span><span class="sw line" aria-hidden="true"></span>Documented connection · Russia to Ukraine, APT28, per GTIG</span>
           </div>
         </div>
-        <p class="listingrule"><strong>Listing rule:</strong> a country is pinned only when the published report documents that country, and a line is drawn only where a source report documents the connection. Reports that name no country get a tracker record and no pin.</p>
-        <p class="atlasnote">Evidence Atlas · custom drawn vector map · coastlines simplified · Singapore anchors the Asia scanning GTIG describes, and the United Kingdom anchors its Europe targets. Tap a pin to highlight its tracker records.</p>
+        
+        <p class="atlasnote">Singapore and the United Kingdom represent regional reports for Asia and Europe. Select a pin to see related incidents.</p>
       </section>
 
       </div><!-- /rail -->
@@ -644,8 +620,8 @@
 
       <!-- SOCIAL POSTS -->
       <section id="social" aria-labelledby="socialH">
-        <div class="sec-head"><span class="livedot" aria-hidden="true"></span><h2 id="socialH">Report Updates</h2><span class="tag">Latest updates from the teams that published the reports · Tap through to the source</span></div>
-        <p class="shortline">Update cards built only from the verified reports already in the tracker above. Each card opens the original report from the team that found the attack.</p>
+        <div class="sec-head"><span class="livedot" aria-hidden="true"></span><h2 id="socialH">Report Updates</h2></div>
+        
         <div class="socialgrid" style="margin-top:12px">
           <article class="spost">
             <div class="smeta"><span class="sname">Google GTIG</span><span class="splat">Report</span><span>Nov 16, 2026</span></div>
@@ -673,7 +649,7 @@
       <!-- STATUS BOARD: SERVICE AVAILABILITY -->
       <section id="status-board" aria-labelledby="statusH">
         <div class="sec-head"><span class="livedot" aria-hidden="true"></span><h2 id="statusH">Service Availability · Internet and Big Tech Status</h2><span class="tag">Service availability only · Official status sources · Not attack reports</span></div>
-        <p class="shortline">This board answers one question only: <strong>is the service up or down right now</strong>. It is a service availability board, not a list of attacks, and a degraded service here does not mean anyone was hacked. Snapshot checked <strong>Wed Nov 18, 2026 at 12:37 PM ET</strong> from official status feeds. Rows marked <strong>Live check</strong> try to refresh from the official status API when you open this page and show the time they updated. Rows marked <strong>Check official</strong> have no simple public feed in this snapshot, so tap through instead of trusting a stale label.</p>
+        <p class="shortline">Live checks and dated snapshots from provider status pages.</p>
         <div class="statusboard" style="margin-top:12px" id="statusBoard">
           <div class="strow" data-status-api="https://status.openai.com/api/v2/status.json">
             <div><span class="stname">OpenAI</span><span class="stsvc">ChatGPT and API · Live check</span></div>
@@ -726,13 +702,13 @@
           <span class="stamp">Last updated Nov 17, 2026</span>
         </div>
         <pre id="jsonView" aria-label="JSON export of the feed records"></pre>
-        <p class="api-note">This static page has no server, so the export above is generated in your browser from the same dataset as the map and feed.</p>
+        
       </section>
 
       <!-- LEARN AND REFERENCE: all education text, collapsed, at the bottom -->
       <div class="learn-divider" id="learn">
         <h2>Learn and Reference</h2>
-        <p>Education and background, kept separate from the live tools above and collapsed until you open it. The news, tracker and Evidence Atlas above are the main area.</p>
+        
       </div>
 
       <section aria-labelledby="aboutNewsH">
@@ -803,9 +779,7 @@
         </details>
       </section>
 
-      <footer>
-        <p>AI ATTACK TRACKER · AI ATTACK NEWS · AI ATTACK MAP · aiattacknews.com · aiattackmap.com and aiattacktracker.com redirect to aiattacknews.com · The live AI attack tracker and AI cyber attack tracker for autonomous AI attacks, agentic AI attacks, AI assisted intrusions and AI malware, with AI Attack News for the latest AI attack news today · Snapshot built Nov 17, 2026 · Figures quoted from the source named on each record.<br />AI Attack Tracker navigation: <a href="#tracker">Tracker</a> · <a href="#ai-attack-map">AI Attack Map</a> · <a href="#ai-attack-news">AI Attack News</a> · <a href="#timeline">AI Attack Timeline</a> · <a href="#api">AI Attack Tracker Data and API</a> · <a href="#learn">Learn and Reference</a><br />Sources: <a href="https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold" target="_blank" rel="noopener">Google GTIG</a> · <a href="https://www.anthropic.com/news/disrupting-AI-espionage" target="_blank" rel="noopener">Anthropic</a> · <a href="https://aws.amazon.com/blogs/security/ai-augmented-threat-actor-accesses-fortigate-devices-at-scale/" target="_blank" rel="noopener">Amazon Threat Intelligence</a> · <a href="https://gambit.security/blog-posts/a-single-operator-two-ai-platforms-nine-government-agencies-the-full-technical-report" target="_blank" rel="noopener">Gambit Security</a></p>
-      </footer>
+      <footer><p>AI Attack News &nbsp;·&nbsp; <a href="#social">Source reports</a> &nbsp;·&nbsp; <a href="#status-board">Service status</a> &nbsp;·&nbsp; <a href="#api">Data</a> &nbsp;·&nbsp; <a href="#learn">Methodology</a></p></footer>
 
     </div>
 
@@ -823,15 +797,11 @@
         /* Since your last visit: real data only. The visit marker lives on this
            device alone; the counts come from the publication dates in the dataset. */
         (function sinceVisit() {
-          var line = document.getElementById("sinceLine");
-          var out = document.getElementById("sinceText");
-          if (!out) return;
           var KEY = "aiat-last-visit-v1";
           var prev = null;
           try { prev = window.localStorage.getItem(KEY); } catch (e) { prev = null; }
           var dates = cards.map(function (c) { return c.getAttribute("data-date") || ""; }).filter(Boolean).sort();
           var latest = dates.length ? dates[dates.length - 1] : "";
-          var fmtLatest = "Nov 16, 2026";
           var newCards;
           if (prev) {
             var prevDay = String(prev).slice(0, 10);
@@ -849,18 +819,6 @@
           pins.forEach(function (pin) {
             if (newPins[pin.getAttribute("data-pinindex")]) pin.classList.add("is-new");
           });
-          if (!prev) {
-            out.innerHTML = "First visit on this device. <strong>" + newCards.length + " new verified reports</strong> in the latest batch, published " + fmtLatest + ", out of " + cards.length + " records on file. They carry the New tag in the tracker and pulse once on the Evidence Atlas.";
-          } else {
-            var prevDate = new Date(prev);
-            var prevLabel = isNaN(prevDate.getTime()) ? "your last visit" : prevDate.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
-            if (newCards.length) {
-              line.classList.add("has-new");
-              out.innerHTML = "Last visit " + prevLabel + ". <strong>" + newCards.length + " new verified report" + (newCards.length === 1 ? "" : "s") + "</strong> published since then, marked New in the tracker and pulsing once on the map. Latest publication " + fmtLatest + ".";
-            } else {
-              out.innerHTML = "Last visit " + prevLabel + ". <strong>Nothing new.</strong> No verified report has been published since then; the latest is still the " + fmtLatest + " GTIG batch. Quiet here means quiet in the sources, and the line will say so until a new report lands.";
-            }
-          }
           try { window.localStorage.setItem(KEY, new Date().toISOString()); } catch (e) {}
         })();
 

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://aiattacknews.com/</loc>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://aiattacknews.com/</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://aiattacknews.com/news/european-commission-ai-cyber-campaign.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://aiattacknews.com/news/faa-nationwide-ground-stop.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://aiattacknews.com/news/google-exploit-agent.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://aiattacknews.com/news/google-ai-credential-theft.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://aiattacknews.com/news/mexico-government-ai-campaign.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://aiattacknews.com/news/fortigate-ai-assisted-intrusions.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://aiattacknews.com/news/anthropic-claude-code-espionage.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://aiattacknews.com/news/google-promptsteal-ukraine.html</loc><lastmod>2026-11-23</lastmod></url>
 </urlset>

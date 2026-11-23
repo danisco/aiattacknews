@@ -330,7 +330,7 @@
       .atlasnote{margin-top:8px;font:400 .8rem/1.45 Inter,sans-serif}
       .atlas:not(.expanded) svg.atlasmap{height:auto}
       #tracker,.wrap>section,.learn-divider{--bg:#fff;--surface:#fff;--surface2:#edf2f5;--ink:#1c2a38;--muted:#465b6c;--accent:#0d675b;--info:#15589b;--violet:#623d88;--amber:#895522;--line:#bccad4;--line2:#d7e0e7;--warn:#82501d;--ok:#146352}
-      #tracker{padding:16px;background:white;border:1px solid #d1dbe2;border-radius:16px}
+      #tracker{--sev1:#485e73;--sev2:#775300;--sev3:#9a430e;--sev4:#a62135;padding:16px;background:white;border:1px solid #d1dbe2;border-radius:16px}
       .row-item{padding:12px}
       .wrap>section,.learn-divider{margin-top:28px}
       @media(max-width:850px){.frontpage{grid-template-columns:minmax(0,1fr)}}
@@ -690,13 +690,7 @@
 
       <!-- DATA AND API -->
       <section id="api" aria-labelledby="apiH">
-        <div class="sec-head"><h2 id="apiH">Data and API</h2><span class="tag">Tracker data · JSON export</span></div>
-        <div class="api">
-          <div class="arow"><span class="m">GET</span><span class="p">/api/v1/incidents</span><span class="d">All 13 records</span></div>
-          <div class="arow"><span class="m">GET</span><span class="p">/api/v1/incidents?type=agent_run</span><span class="d">Filter by AI role</span></div>
-          <div class="arow"><span class="m">GET</span><span class="p">/api/v1/incidents?status=confirmed</span><span class="d">Filter by confidence</span></div>
-          <div class="arow"><span class="m">GET</span><span class="p">/api/v1/incidents?severity=critical</span><span class="d">Filter by severity</span></div>
-        </div>
+        <div class="sec-head"><h2 id="apiH">Incident data</h2><span class="tag">Tracker data · JSON export</span></div>
         <div class="api-actions">
           <button class="abtn" type="button" id="dlJson">Download JSON</button>
           <button class="abtn ghost" type="button" id="viewJson" aria-expanded="false">View JSON</button>
@@ -714,17 +708,7 @@
 
       <section aria-labelledby="aboutNewsH"><div class="sec-head"><h2 id="aboutNewsH">Coverage standards</h2></div><details class="seo"><summary>Sources and attribution</summary><p>We cover confirmed AI incidents, credible suspected attacks, and major disruptions while investigators establish the cause. We name the source of each assessment and update developing stories as evidence changes. Outages with a technical explanation remain in our news archive.</p></details></section>
 
-      <section aria-labelledby="aboutH">
-        <div class="sec-head"><h2 id="aboutH">About the Tracker</h2><span class="tag">Reference</span></div>
-        <details class="seo">
-          <summary>What this tracker tracks · Read more</summary>
-          <div class="seo-body">
-            <p>Use this <strong>AI attack tracker</strong> to track AI attacks worldwide: <strong>autonomous AI attacks</strong>, agentic AI attacks, AI assisted intrusions, AI malware and AI powered cyber attacks. The Evidence Atlas plots every verified incident with a documented country, and the <strong>AI Attack Tracker rail beside the news</strong> lists each AI attack with its source report, severity, AI role and evidence grade. If you are looking for an AI threat tracker, an AI incident tracker or a live AI cyber attack tracker, this is that tracker, built only from published reports.</p>
-            <p>The <strong>AI Attack Tracker</strong> at aiattacknews.com is a live AI attack tracker, AI threat tracker and AI incident tracker for the new wave of AI cyber attacks. The tracker follows <strong>autonomous AI attacks</strong> run by AI agents, agentic AI attacks, AI assisted intrusions, AI in malware, AI powered credential harvesting and AI orchestrated espionage. Every record in this AI cyber attack tracker is plotted on the <strong>AI Attack Map</strong> when a location is documented and listed in the tracker feed, with the original published report linked on each record. <strong>AI Attack News</strong> is the news companion to the tracker: it turns those same verified records into readable AI attack news stories for readers searching for AI attack news and AI attack news today. Search the tracker by AI role, severity and evidence grade, download the AI attack tracker data as JSON, read the latest stories in AI Attack News, and follow the AI attack disclosure timeline to see when each AI attack was found and published.</p>
-            <p>AI Attack Tracker is the live AI attack tracker and AI attack map on aiattacknews.com, with AI Attack News for the latest AI attack news today. The AI Attack Map domain aiattackmap.com and the AI Attack Tracker domain aiattacktracker.com redirect to aiattacknews.com. Only published reports.</p>
-          </div>
-        </details>
-      </section>
+
 
       <section id="timeline" aria-labelledby="timelineH">
         <div class="sec-head"><h2 id="timelineH">Timeline</h2><span class="tag">Education · Publication dates</span></div>
@@ -901,6 +885,7 @@
             openDetail(card);
           });
           card.addEventListener("keydown", function (e) {
+            if (e.target !== card) return;
             if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openDetail(card); }
           });
         });
@@ -918,15 +903,16 @@
               var pill = row.querySelector(".pill");
               var ptxt = row.querySelector(".pill-text");
               var note = row.querySelector(".stnote");
-              var ind = j.status.indicator || "none";
+              var ind = j.status.indicator;
+              if (["none", "minor", "major", "critical"].indexOf(ind) < 0) return;
               var desc = j.status.description || "";
               pill.classList.remove("pill-up", "pill-deg", "pill-check");
               if (ind === "none") { pill.classList.add("pill-up"); if (ptxt) ptxt.textContent = "Up · " + desc; }
-              else if (ind === "critical" || ind === "major") { pill.classList.add("pill-deg"); if (ptxt) ptxt.textContent = "Down · " + desc; }
+              else if (ind === "critical" || ind === "major") { pill.classList.add("pill-deg"); if (ptxt) ptxt.textContent = desc || "Service disruption"; }
               else { pill.classList.add("pill-deg"); if (ptxt) ptxt.textContent = "Degraded · " + desc; }
               liveCount++;
               var stamp = document.getElementById("statusStamp");
-              if (stamp) stamp.textContent = "Live check just ran in your browser for " + liveCount + " of " + stRows.length + " marked rows from their official status APIs. Other rows stay on the Nov 18, 2026 snapshot or point you to the official page. Circle plus Up means operational, triangle plus Degraded or Down means a reported problem, square plus Check means open the official page.";
+              if (stamp) stamp.textContent = "Checked " + liveCount + " of " + stRows.length + " live feeds. See each provider for details.";
               if (note) note.innerHTML = note.innerHTML.replace("Snapshot Nov 18, 2026", "Live checked just now");
             }).catch(function () {});
           });
@@ -959,7 +945,7 @@
           });
         };
         var payload = function () {
-          return JSON.stringify({ dataset: "AI Attack Tracker incidents · aiattacknews.com", last_updated: "2026-11-17", count: cards.length, incidents: collect() }, null, 2);
+          return JSON.stringify({ dataset: "AI Attack Tracker incidents · aiattacknews.com", last_updated: "2026-11-23", count: cards.length, incidents: collect() }, null, 2);
         };
         document.getElementById("dlJson").addEventListener("click", function () {
           var blob = new Blob([payload()], { type: "application/json" });

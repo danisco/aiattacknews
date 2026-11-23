@@ -337,6 +337,13 @@
       @media(max-width:540px){.masthead{padding-block:10px}.mainnav a{padding-inline:8px}.newsfeature h1{font-size:2.05rem}}
       @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
       @media(min-width:851px){.feed{max-height:28rem;overflow-y:auto}}
+          .archive-link{display:none}
+      .region-list{margin:12px 0 0;font-size:.85rem;color:#40535d}
+      .region-list a{color:#145b50}
+      @media(max-width:850px){
+        .headlines:not(:target)>.hline:nth-of-type(n+5){display:none}
+        .headlines:not(:target)>.archive-link{display:inline-flex;align-items:center;min-height:44px;color:#175d50;font-weight:600}
+      }
     </style>
   </head>
   <body>
@@ -375,7 +382,7 @@
           <div class="nfmeta"><span class="ns">AI use confirmed</span><time datetime="2026-11-23">Nov 23, 2026</time></div>
           <h1 id="nfTitle"><a href="/news/cairn-ai-agents-monai-label.html">Amazon says AI agents found a new flaw in medical imaging software</a></h1><p class="nfsummary">Cairn agents took control of a server during a campaign targeting East Asian universities. The operator chose the targets, and the agents worked out how to proceed.</p><div class="nlinks"><a class="primary" href="/news/cairn-ai-agents-monai-label.html">Read story</a><a class="secondary" href="#tracker">Incident tracker</a></div></article>
 
-        <div class="headlines"><h2>More reporting</h2><a class="hline" href="/news/european-commission-ai-cyber-campaign.html"><span class="hm"><span class="hs">European Commission · Nov 19, 2026</span></span><span class="ht">European Commission confirms AI tools were used in cyber campaign</span><span class="hp">The Commission temporarily took applications offline after detecting the campaign on October 22. Most had returned to service by its November 19 briefing.</span></a>
+        <div class="headlines" id="full-archive" tabindex="-1"><h2>More reporting</h2><a class="hline" href="/news/european-commission-ai-cyber-campaign.html"><span class="hm"><span class="hs">European Commission · Nov 19, 2026</span></span><span class="ht">European Commission confirms AI tools were used in cyber campaign</span><span class="hp">The Commission temporarily took applications offline after detecting the campaign on October 22. Most had returned to service by its November 19 briefing.</span></a>
           <a class="hline" href="/news/faa-nationwide-ground-stop.html"><span class="hm"><span class="hs">Infrastructure watch</span><span class="hd">FAA · Nov 15, 2026</span></span><span class="ht">FAA ground stop halted U.S. departures. Here’s what caused it.</span><span class="hp">Thousands of travelers lost flights after a telecommunications failure. The FAA says the evidence points to a router problem and gives no indication of a cyberattack.</span></a>
           <a class="hline" href="/news/google-exploit-agent.html"><span class="hm"><span class="hs">Threat intelligence</span><span class="hd">Google Threat Intelligence Group · Nov 16, 2026</span></span><span class="ht">Google finds an AI agent that builds and runs exploits on its own</span><span class="hp">Google researchers discovered exploit_agent on an exposed staging server. Separate investigations put other AI agents inside active intrusions.</span></a>
           <a class="hline" href="/news/google-ai-credential-theft.html"><span class="hm"><span class="hs">Threat intelligence</span><span class="hd">Google Threat Intelligence Group · Sep 8, 2026</span></span><span class="ht">Google reports a credential-theft campaign assembled in under six hours</span><span class="hp">Google says attackers used AI agents after gaining access to a cloud resource in the second quarter of 2026.</span></a>
@@ -383,19 +390,20 @@
           <a class="hline" href="/news/fortigate-ai-assisted-intrusions.html"><span class="hm"><span class="hs">Incident report</span><span class="hd">Amazon Threat Intelligence · Feb 20, 2026</span></span><span class="ht">Amazon traces AI-assisted intrusions to more than 600 FortiGate devices</span><span class="hp">Amazon observed compromises across more than 55 countries between January 11 and February 18. The investigation points to weak access controls.</span></a>
           <a class="hline" href="/news/anthropic-claude-code-espionage.html"><span class="hm"><span class="hs">Incident report</span><span class="hd">Anthropic · Nov 13, 2025</span></span><span class="ht">Anthropic reports AI-assisted espionage attempts against roughly 30 targets</span><span class="hp">Anthropic says attackers used Claude Code against technology companies, financial institutions, manufacturers and government agencies. A small number of attempts succeeded.</span></a>
           <a class="hline" href="/news/google-promptsteal-ukraine.html"><span class="hm"><span class="hs">Malware report</span><span class="hd">Google Threat Intelligence Group · Nov 5, 2025</span></span><span class="ht">Google documents AI-assisted malware in attacks on Ukraine</span><span class="hp">Google linked PROMPTSTEAL to Russian group APT28. A second malware family described in the same report was still experimental.</span></a>
+          <a class="archive-link" href="#full-archive">Full archive</a>
         </div></section>
 
       <!-- RIGHT RAIL: tracker, then the evidence atlas under it -->
       <div class="rail">
 
       <section id="ai-attack-map" aria-labelledby="atlasH">
-        <div class="sec-head"><span class="livedot" aria-hidden="true"></span><h2 id="atlasH">Evidence Atlas</h2><span class="tag">5 locations</span></div>
+        <div class="sec-head"><span class="livedot" aria-hidden="true"></span><h2 id="atlasH">Evidence Atlas</h2><span class="tag">3 country pins</span></div>
         <div class="atlas" id="atlasCard">
           <div class="atlas-head">
             <span class="at"><b>Locations</b></span>
             <button class="expandbtn" type="button" id="atlasExpand" aria-expanded="false" aria-controls="atlasCard">Expand map</button>
           </div>
-          <svg class="atlasmap" viewBox="0 0 1000 460" role="application" aria-label="Evidence Atlas world map, drawn as a vector world map with recognisable coastlines for North and South America, Africa, Europe, Asia and Australia. Diamond pins mark the countries documented in published reports: Ukraine, Mexico, the United States, Singapore as the Asia anchor, and the United Kingdom as the Europe anchor. One dashed line links Russia to Ukraine, the one connection a source report documents, for APT28 PROMPTSTEAL.">
+          <svg class="atlasmap" viewBox="0 0 1000 460" role="application" aria-label="Evidence Atlas world map, drawn as a vector world map with recognisable coastlines for North and South America, Africa, Europe, Asia and Australia. Pins mark Ukraine, Mexico and the United States. One dashed line links Russia to Ukraine, the one connection a source report documents, for APT28 PROMPTSTEAL.">
             <rect x="0" y="0" width="1000" height="460" fill="#04101E"></rect>
             <g aria-hidden="true">
               <path class="grat" d="M100,0 V460 M200,0 V460 M300,0 V460 M400,0 V460 M500,0 V460 M600,0 V460 M700,0 V460 M800,0 V460 M900,0 V460"/>
@@ -444,18 +452,6 @@
               <text class="pnum" x="0" y="3.5">3</text>
               <text class="plabel" x="15" y="3">UNITED STATES</text>
             </g>
-            <g class="pinmark auto" data-pinindex="3" transform="translate(788,227)" tabindex="0" role="button" aria-label="Pin 4, Singapore, the anchor for organisations scanned across Asia by PentAGI. Activate to highlight its tracker record.">
-              <circle class="pulse" cx="0" cy="0" r="15"></circle>
-              <path class="diamond" d="M0,-11 L11,0 L0,11 L-11,0 Z"/>
-              <text class="pnum" x="0" y="3.5">4</text>
-              <text class="plabel" x="-15" y="3" text-anchor="end">SINGAPORE</text>
-            </g>
-            <g class="pinmark" data-pinindex="4" transform="translate(494,92)" tabindex="0" role="button" aria-label="Pin 5, United Kingdom, the anchor for MIDNIGHT NEPTUNE targets in Europe. Activate to highlight its tracker record.">
-              <circle class="pulse" cx="0" cy="0" r="15"></circle>
-              <path class="diamond" d="M0,-11 L11,0 L0,11 L-11,0 Z"/>
-              <text class="pnum" x="0" y="3.5">5</text>
-              <text class="plabel" x="-15" y="-4" text-anchor="end">UNITED KINGDOM</text>
-            </g>
           </svg>
           <div class="atlas-legend">
             <span><span class="sw teal" aria-hidden="true"></span>Documented country</span>
@@ -465,7 +461,11 @@
           </div>
         </div>
         
-        <p class="atlasnote">Singapore and the United Kingdom represent regional reports for Asia and Europe. Select a pin to see related incidents.</p>
+        <p class="region-list"><strong>Regional reports</strong><br>
+          East Asia · <a href="/news/cairn-ai-agents-monai-label.html">University servers targeted by Cairn agents</a><br>
+          Asia · <a href="/news/google-exploit-agent.html">PentAGI activity</a><br>
+          North America and Europe · <a href="https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold">MIDNIGHT NEPTUNE activity</a>
+        </p>
       </section>
 
       <section id="tracker" aria-labelledby="trackH">
@@ -493,7 +493,7 @@
             <div class="r-meta"><span class="c-target">Popular web software · worldwide</span><span class="c-type">Agent run</span><span class="c-status"><span class="status st-provider"><span class="dot"></span>Provider reported</span></span><span class="c-src"><a href="https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold" target="_blank" rel="noopener">GTIG ↗</a></span></div>
           </article>
 
-          <article class="row-item" data-id="cairn-pentagi-2026" data-date="2026-11-16" data-cat="autonomous" data-pin="2,3" data-pinlabel="United States · Singapore (Asia anchor)" data-source="https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold" tabindex="0" title="Open detail">
+          <article class="row-item" data-id="cairn-pentagi-2026" data-date="2026-11-16" data-cat="autonomous" data-pin="2" data-pinlabel="United States · regional activity in Asia" data-source="https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold" tabindex="0" title="Open detail">
             <div class="r-top"><span class="c-date">NOV 16, 2026 <span class="delay">Delay <b>≈1 mo</b></span></span><span class="newtag">New</span><span class="spacer"></span><span class="c-sev"><span class="sev sev3"><span class="bars"><i></i><i></i><i></i><i class="off"></i></span>High</span></span></div>
             <div class="c-main">
               <h3>CAIRN and PentAGI: agent frameworks inside live intrusions</h3>
@@ -503,7 +503,7 @@
             <div class="r-meta"><span class="c-target">Aerospace sector · United States · Organisations · Asia</span><span class="c-type">Agent run</span><span class="c-status"><span class="status st-ok"><span class="dot"></span>Confirmed</span></span><span class="c-src"><a href="https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold" target="_blank" rel="noopener">GTIG ↗</a></span></div>
           </article>
 
-          <article class="row-item" data-id="midnight-neptune-2026" data-date="2026-11-16" data-cat="assisted" data-pin="4" data-pinlabel="United Kingdom (Europe anchor)" data-source="https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold" tabindex="0" title="Open detail">
+          <article class="row-item" data-id="midnight-neptune-2026" data-date="2026-11-16" data-cat="assisted" data-pinlabel="Regional activity in North America and Europe" data-source="https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold" tabindex="0" title="Open detail">
             <div class="r-top"><span class="c-date">NOV 16, 2026 <span class="delay">Delay <b>not stated</b></span></span><span class="newtag">New</span><span class="spacer"></span><span class="c-sev"><span class="sev sev2"><span class="bars"><i></i><i></i><i class="off"></i><i class="off"></i></span>Medium</span></span></div>
             <div class="c-main">
               <h3>MIDNIGHT NEPTUNE: a coding assistant turned into a backdoor</h3>
